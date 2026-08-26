@@ -1,0 +1,24 @@
+---
+- name: OS Check
+  hosts: rke2
+
+  tasks:
+    - name: Debian Message
+      debug:
+        msg: "This is Debian"
+      when: ansible_distribution == "Debian"
+
+    - name: Ubuntu Message
+      debug:
+        msg: "This is Ubuntu"
+      when: ansible_distribution == "Ubuntu"
+
+    - name: macOS Message
+      debug:
+        msg: "This is macOS"
+      when: ansible_distribution == "MacOSX"
+
+    - name: Windows Message
+      debug:
+        msg: "This is Windows"
+      when: ansible_os_family == "Windows"

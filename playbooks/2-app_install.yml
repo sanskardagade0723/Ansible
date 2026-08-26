@@ -1,0 +1,53 @@
+---
+- name: Install and start the service
+  hosts: rke2
+  become: true
+
+  tasks:
+    - name: Install nginx  #- means just a comment
+      apt:
+        name: nginx
+        state: present
+        update_cache: yes  # equals to sudo apt update and install ingnix
+
+    - name: Start nginx
+      service:
+        name: nginx   # its a package name 
+        state: started
+        enabled: true  #Makes the service start automatically when the server boots.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# ---
+# - name: Install and start the service
+#   hosts: localhost
+#   become: true
+
+#   tasks:
+#     - name: Installing nginx
+#       apt:
+#         name: nginx
+#         state: present
+#         update_cache: yes
+
+#     - name: Starting the nginx service
+#       service:
+#         name: nginx
+#         state: started
+#         enabled: true

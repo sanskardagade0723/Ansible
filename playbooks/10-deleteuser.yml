@@ -1,0 +1,10 @@
+---
+- name: Delete user from remote server
+  hosts: rke2
+  become: true
+
+  tasks:
+    - name: Delete devuser
+      user:
+        name: devuser
+        state: absent

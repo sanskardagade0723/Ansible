@@ -1,0 +1,54 @@
+---
+- name: Loop Example
+  hosts: rke2
+  become: true
+
+  tasks:
+    - name: Print items
+      debug:
+        msg: "{{ item }}"
+      loop:
+        - nginx
+        - vim
+        - curl
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# - name: Install packages
+#   apt:
+#     name: "{{ item }}"
+#     state: present
+#   loop:
+#     - nginx
+#     - vim
+#     - curl

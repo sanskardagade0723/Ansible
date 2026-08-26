@@ -1,0 +1,12 @@
+---
+- name: Enable nginx
+  hosts: rke2
+  become: true # matab root user permission
+
+  tasks:
+    - name: Enable and start nginx
+      service:
+        name: nginx
+        state: started
+        enabled: true
+        #enabled:false  #Makes the service not start automatically when the server boots.

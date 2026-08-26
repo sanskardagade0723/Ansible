@@ -1,0 +1,14 @@
+---
+- name: Run script on remote server
+  hosts: rke2
+  become: true
+
+  tasks:
+    - name: Execute script
+      script: test.sh
+
+
+
+#Copied test.sh from control node to a temporary location on master1.
+#Executed it on master1.
+#Deleted the temporary copy after execution

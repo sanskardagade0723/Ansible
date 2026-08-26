@@ -1,0 +1,26 @@
+---
+- name: Manage nginx
+  hosts: rke2
+  become: true
+
+  tasks:
+    - name: Install nginx
+      apt:
+        name: nginx
+        state: present
+      tags:
+        - install
+
+    - name: Start nginx
+      service:
+        name: nginx
+        state: started
+      tags:
+        - start
+
+    - name: Stop nginx
+      service:
+        name: nginx
+        state: stopped
+      tags:
+        - stop

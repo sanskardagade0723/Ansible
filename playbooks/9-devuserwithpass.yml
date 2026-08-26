@@ -1,0 +1,13 @@
+---
+- name: Create user on remote server
+  hosts: rke2
+  become: true
+
+  tasks:
+    - name: Create devuser with password
+      user:
+        name: devuser
+        create_home: yes
+        shell: /bin/bash
+        password: "{{ 'Password123' | password_hash('sha512') }}"
+        state: present

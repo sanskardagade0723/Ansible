@@ -1,0 +1,24 @@
+---
+- name: Add cron job
+  hosts: rke2
+  become: false
+
+  tasks:
+    - name: Run script every minute
+      cron:
+        name: "Cron Test"
+        minute: "*"
+        job: "/home/ufoqa/test.sh"
+        
+# ---
+# - name: Add cron job
+#   hosts: rke2
+#   become: true  # if i do false it will create for user ufoqa but if i do true it will create for root user
+
+#   tasks:
+#     - name: Run backup script every 5 minutes
+#       cron:
+#         name: "Backup Job"
+#         minute: "*/5"
+#         job: "/home/ufoqa/test.sh"
+

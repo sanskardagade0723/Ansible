@@ -1,0 +1,10 @@
+---
+- name: Remove cron job
+  hosts: rke2
+  become: false
+
+  tasks:
+    - name: Remove Cron Test job
+      cron:
+        name: "Cron Test"
+        state: absent

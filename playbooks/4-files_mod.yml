@@ -1,0 +1,39 @@
+---
+- name: File Module Examples
+  hosts: rke2
+  become: true
+
+  tasks:
+
+    - name: Create a directory
+      file:
+        path: /tmp/ansible_demo
+        state: directory
+        mode: '0755'
+
+    - name: Create a file
+      file:
+        path: /tmp/ansible_demo/test.txt
+        state: touch
+        mode: '0644'
+
+    - name: Change file permissions
+      file:
+        path: /tmp/ansible_demo/test.txt
+        mode: '0777'
+
+    - name: Change ownership
+      file:
+        path: /tmp/ansible_demo/test.txt
+        owner: root
+        group: root
+
+    # - name: Delete a file
+    #   file:
+    #     path: /tmp/ansible_demo/test.txt
+    #     state: absent
+
+    # - name: Delete a directory
+    #   file:
+    #     path: /tmp/ansible_demo
+    #     state: absent

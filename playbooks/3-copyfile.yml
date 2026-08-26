@@ -1,0 +1,14 @@
+---
+- name: Copy file to cluster
+  hosts: rke2
+  become: true  
+  
+  tasks:
+    - name: Copy file
+      copy:
+        src: test.txt
+        dest: /tmp/test.txt
+        #owner: root # change the owner of the file to root
+        #mode: '0644'  # Optional: Set the file permissions (default is 0644)
+        #group: root # change the group of the file to root
+        #backup: yes # Optional: Create a backup of the destination file if it already exists
