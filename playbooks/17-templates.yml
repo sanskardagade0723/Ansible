@@ -1,0 +1,13 @@
+---
+- hosts: localhost
+  connection: local
+
+  vars:
+    server_name: web01
+    env: dev
+
+  tasks:
+    - name: Create file from template
+      template:
+        src: templates/info.j2
+        dest: /tmp/info.txt

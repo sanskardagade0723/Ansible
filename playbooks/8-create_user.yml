@@ -13,13 +13,10 @@
         #create_home: yes    #if you want to create home directory for the user
         #groups: sudo  #if you want to add the user to sudo group
 
-    - name: Create user with password
-      user:
-        name: devuser
-        password: "{{ 'Password123' | password_hash('sha512') }}"
-
-
     
+
+
+
     # - name: Remove user
     #   user:
     #     name: devuser
