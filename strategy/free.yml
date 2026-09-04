@@ -1,0 +1,11 @@
+---
+- hosts: rke2
+  strategy: free
+
+  tasks:
+    - name: Wait 20 seconds
+      command: sleep 20
+
+    - name: Print message
+      debug:
+        msg: "Sleep completed"

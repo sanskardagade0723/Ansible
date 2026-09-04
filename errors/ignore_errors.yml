@@ -1,0 +1,12 @@
+---
+- hosts: rke2
+
+  tasks:
+
+    - name: Run invalid command
+      command: abcxyz
+      ignore_errors: true
+
+    - name: Playbook continues
+      debug:
+        msg: "Hello Sanskar"

@@ -1,0 +1,12 @@
+---
+- name: File Separation Demo
+  hosts: rke2
+  become: true
+
+  vars_files:
+    - vars/main.yml
+
+  tasks:
+    - import_tasks: tasks/user.yml
+
+    - import_tasks: tasks/file.yml

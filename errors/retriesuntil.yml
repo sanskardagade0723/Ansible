@@ -1,0 +1,12 @@
+---
+- hosts: rke2
+
+  tasks:
+
+    - name: Wait for ssh service
+      command: systemctl is-active ssh
+      register: result
+
+      retries: 5
+      delay: 10
+      until: result.stdout == "active"

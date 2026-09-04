@@ -1,0 +1,28 @@
+---
+- name: Deploy Web Application
+  hosts: web
+  become: true
+
+  tasks:
+
+    - name: Install nginx
+      apt:
+        name: nginx
+        state: present
+        update_cache: yes
+
+    - name: Copy website
+      copy:
+        src: files/index.html
+        dest: /var/www/html/index.html
+
+    - name: Start nginx
+      service:
+        name: nginx
+        state: started
+        enabled: true
+
+    - name: Check website
+      uri:
+        url: http://localhost
+        status_code: 200

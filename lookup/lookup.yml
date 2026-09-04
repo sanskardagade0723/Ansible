@@ -1,0 +1,7 @@
+---
+- hosts: localhost
+
+  tasks:
+    - name: Read file using lookup
+      debug:
+        msg: "{{ lookup('file', 'test.txt') }}"

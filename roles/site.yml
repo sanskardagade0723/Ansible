@@ -1,0 +1,6 @@
+---
+- hosts: rke2
+  become: true
+
+  roles:
+    - users

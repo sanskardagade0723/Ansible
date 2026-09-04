@@ -1,0 +1,13 @@
+---
+- hosts: localhost
+
+  vars_files:
+    - secret.yml
+
+  tasks:
+    - name: Display username
+      debug:
+        msg: "User is {{ my_user }}"
+
+
+#ansible-playbook test.yml --ask-vault-pass

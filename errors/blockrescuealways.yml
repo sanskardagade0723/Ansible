@@ -1,0 +1,21 @@
+---
+- hosts: rke2
+
+  tasks:
+
+    - block:
+
+        - name: Intentional failure
+          command: abcxyz
+
+      rescue:
+
+        - name: Handle failure
+          debug:
+            msg: "Task failed, running rescue"
+
+      always:
+
+        - name: Always run
+          debug:
+            msg: "This always executes"

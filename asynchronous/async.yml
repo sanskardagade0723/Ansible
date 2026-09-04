@@ -1,0 +1,12 @@
+---
+- name: Async Demo
+  hosts: rke2
+
+  tasks:
+    - name: Sleep for 2 minutes in background
+      command: sleep 120
+      async: 180  #Maximum time allowed for the job
+      poll: 0     #How frequently Ansible checks the job
+
+
+# ps -ef | grep sleep

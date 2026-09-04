@@ -1,0 +1,10 @@
+---
+- hosts: localhost
+
+  tasks:
+
+    - uptime_check:
+      register: result
+
+    - debug:
+        var: result.uptime

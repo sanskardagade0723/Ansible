@@ -1,0 +1,7 @@
+---
+- hosts: localhost
+
+  tasks:
+    - name: Get hostname
+      debug:
+        msg: "{{ lookup('pipe', 'hostname') }}"

@@ -1,0 +1,13 @@
+---
+- name: Jinja2 Example
+  hosts: rke2
+  become: true
+
+  tasks:
+    - name: Generate info file
+      template:
+        src: info.j2
+        dest: /tmp/info.txt
+
+
+# cat /tmp/info.txt

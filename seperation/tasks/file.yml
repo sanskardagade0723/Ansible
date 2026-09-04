@@ -1,0 +1,5 @@
+---
+- name: Create info file
+  copy:
+    content: "Created by Ansible"
+    dest: "{{ filepath }}"

@@ -1,0 +1,10 @@
+---
+- hosts: rke2
+
+  tasks:
+    - name: Check hostname
+      command: hostname
+      register: host
+
+    - debug:
+        var: host.stdout

@@ -1,0 +1,15 @@
+---
+- hosts: rke2
+  strategy: linear
+
+  tasks:
+    - name: First task
+      debug:
+        msg: "Task 1"
+
+    - name: Wait 10 seconds
+      command: sleep 10
+
+    - name: Second task
+      debug:
+        msg: "Task 2"

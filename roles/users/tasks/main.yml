@@ -1,0 +1,10 @@
+---
+- name: Create user
+  user:
+    name: devuser
+    state: present
+
+- name: Create file
+  copy:
+    content: "Created from Ansible Role"
+    dest: /tmp/role-demo.txt

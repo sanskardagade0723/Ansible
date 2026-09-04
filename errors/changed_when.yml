@@ -1,0 +1,8 @@
+---
+- hosts: rke2
+
+  tasks:
+
+    - name: Check hostname
+      command: hostname
+      changed_when: false

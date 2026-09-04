@@ -1,0 +1,12 @@
+---
+- hosts: localhost
+
+  tasks:
+
+    - name: Test custom module
+      hello:
+        name: Sanskar
+      register: result
+
+    - debug:
+        var: result.message

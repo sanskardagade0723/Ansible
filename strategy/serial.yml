@@ -1,0 +1,11 @@
+---
+- hosts: rke2
+  serial: 1
+
+  tasks:
+    - name: Simulate RKE2 upgrade
+      command: sleep 20
+
+    - name: Verify node
+      debug:
+        msg: "Node upgraded"
